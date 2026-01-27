@@ -1,1 +1,96 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
+@import 'tailwindcss';
+
+/* @font-face {
+  font-family: 'RedHatText';
+  font-weight: 400;
+  font-style: normal;
+  src: url('./assets/static/fonts/RedHatText-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'RedHatText';
+  font-weight: 500;
+  font-style: normal;
+  src: url('./assets/static/fonts/RedHatText-SemiBold.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'RedHatText';
+  font-weight: 700;
+  font-style: normal;
+  src: url('./assets/static/fonts/RedHatText-Bold.woff2') format('woff2');
+  font-display: swap;
+} */
+
+@theme {
+  --font-red-hat: 'Red Hat Text', sans-serif;
+  --default-font-family: var(--font-red-hat);
+
+  --color-red: #c73b0f;
+  --color-rose-50: #fcf8f6;
+  --color-rose-100: #f5eeec;
+  --color-rose-300: #caafa7;
+  --color-rose-400: #ad8a85;
+  --color-rose-500: #87635a;
+  --color-rose-900: #260f08;
+  --color-green: #1ea575;
+  --color-black: #000000;
+  --color-white: #ffffff;
+
+  /* Text Preset 1 – section/hero titles */
+  --text-preset1: 2.5rem; /* 40px */
+  --text-preset1--line-height: 1.2;
+  --text-preset1--letter-spacing: 0;
+
+  /* Text Preset 2 – subheadings */
+  --text-preset2: 1.75rem; /* 28px */
+  --text-preset2--line-height: 1.25;
+  --text-preset2--letter-spacing: 0;
+
+  /* Text Preset 3 – body */
+  --text-preset3: 1rem; /* 16px */
+  --text-preset3--line-height: 1.5;
+  --text-preset3--letter-spacing: 0;
+
+  /* Text Preset 4 – small/captions */
+  --text-preset4: 0.875rem; /* 14px */
+  --text-preset4--line-height: 1.5;
+  --text-preset4--letter-spacing: 0;
+
+  --spacing-1100: 5.5rem; /* 88px */
+  --spacing-500: 2.5rem; /* 40px */
+  --spacing-400: 2rem; /* 32px */
+  --spacing-300: 1.5rem; /* 24px */
+  --spacing-200: 1rem; /* 16px */
+  --spacing-150: 0.75rem; /* 12px */
+  --spacing-100: 0.5rem; /* 8px */
+  --spacing-50: 0.25rem; /* 4px */
+}
+
+@layer base {
+  html {
+    font-size: 16px;
+  }
+
+  body {
+    @apply font-red-hat;
+    @apply max-w-screen-2xl mx-auto bg-rose-50;
+  }
+}
+
+@layer components {
+  .add-to-cart-button {
+    @apply bg-white text-black font-semibold border border-rose-400 py-150 px-300 rounded-full;
+    @apply flex flex-row items-center justify-center gap-100;
+  }
+
+  .quantity-button-container {
+    @apply bg-red text-white font-semibold border border-rose-400 py-150 px-300 min-w-40 rounded-full;
+    @apply flex flex-row items-center justify-between gap-100;
+    @apply hover:bg-white hover:text-red hover:border-red transition-all duration-300;
+  }
+  .confirm-order-button {
+    @apply bg-red text-white py-150 px-300 rounded-full flex flex-row items-center justify-center gap-100;
+  }
+}
