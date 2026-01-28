@@ -1,7 +1,11 @@
 import { useEffect } from 'react'
 import { CircleCheck } from 'lucide-react'
+import { useCart } from '@hooks/useCart'
+import { useCartTotal } from '@hooks/useCartTotal'
 
-export function OrderConfirmed({ isOrderConfirmed, cart, onClose }) {
+export function OrderConfirmed({ isOrderConfirmed, onClose }) {
+  const { cart } = useCart()
+  const { total } = useCartTotal()
   useEffect(() => {
     if (isOrderConfirmed) {
       document.body.style.overflow = 'hidden'
@@ -59,7 +63,7 @@ export function OrderConfirmed({ isOrderConfirmed, cart, onClose }) {
             </div>
             <div className="flex flex-row items-center justify-between">
               <p className="text-preset4 font-regular text-rose-900">Order Total</p>
-              <p className="text-preset2 font-bold text-rose-900">{`$${cart.total.toFixed(2)}`}</p>
+              <p className="text-preset2 font-bold text-rose-900">{`$${total.toFixed(2)}`}</p>
             </div>
           </div>
         </div>
