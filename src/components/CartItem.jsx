@@ -1,5 +1,7 @@
 import { CircleX } from 'lucide-react'
-export function CartItem({ item, removeFromCart }) {
+import { useCart } from '@hooks/useCart'
+export function CartItem({ item }) {
+  const { removeItem } = useCart()
   return (
     <div className="flex flex-row items-center justify-between border-b border-rose-100 p-200">
       <div className="flex flex-col gap-100">
@@ -10,7 +12,7 @@ export function CartItem({ item, removeFromCart }) {
           <span className="text-preset4 text-rose-500 font-bold">{`$${(item.price * item.quantity).toFixed(2)}`}</span>
         </div>
       </div>
-      <button type="button" onClick={() => removeFromCart(item)}>
+      <button type="button" onClick={() => removeItem(item)}>
         <CircleX className="w-5 h-5 text-rose-500" />
       </button>
     </div>
