@@ -3,11 +3,11 @@ import './App.css'
 import { Card } from '@components/Card'
 import { Cart } from '@components/Cart'
 import data from '@data/data.json'
-import { itemReducer } from '@reducers/cartReducer'
+import { cartReducer } from '@reducers/cartReducer'
 import { saveCartToStorage, getCartFromStorage } from '@utils/cartStorage'
 import { OrderConfirmed } from '@components/OrderConfirmed'
 function App() {
-  const [cart, dispatch] = useReducer(itemReducer, getCartFromStorage())
+  const [cart, dispatch] = useReducer(cartReducer, getCartFromStorage())
   useEffect(() => {
     saveCartToStorage(cart)
   }, [cart])

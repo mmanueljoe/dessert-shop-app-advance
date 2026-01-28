@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="cup" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="hsl(14, 86%, 38%)"/>
+      <stop offset="100%" stop-color="hsl(14, 86%, 48%)"/>
+    </linearGradient>
+    <linearGradient id="frost" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="hsl(13, 31%, 94%)"/>
+      <stop offset="100%" stop-color="hsl(20, 50%, 99%)"/>
+    </linearGradient>
+  </defs>
+  <!-- Cup/wrapper -->
+  <rect x="5" y="13" width="22" height="11" rx="2" fill="url(#cup)"/>
+  <!-- Frosting -->
+  <ellipse cx="16" cy="11" rx="11" ry="7" fill="url(#frost)"/>
+  <!-- Cherry -->
+  <circle cx="16" cy="5" r="5" fill="hsl(14, 86%, 42%)"/>
+  <path d="M16 0.5 L16 4.5" stroke="hsl(159, 69%, 38%)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+</svg>
