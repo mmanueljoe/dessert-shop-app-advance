@@ -1,8 +1,14 @@
+export const ADD_ITEM = 'ADD_ITEM'
+export const REMOVE_ITEM = 'REMOVE_ITEM'
+export const INCREMENT = 'INCREMENT'
+export const DECREMENT = 'DECREMENT'
+export const CLEAR_CART = 'CLEAR_CART'
+
 export const initialCart = { items: [], total: 0 }
 
-export function itemReducer(state, action) {
+export function cartReducer(state, action) {
   switch (action.type) {
-    case 'ADD_ITEM': {
+    case ADD_ITEM: {
       const existingItem = state.items.find(item => item.name === action.item.name)
 
       if (existingItem) {
@@ -19,13 +25,13 @@ export function itemReducer(state, action) {
       }
     }
 
-    case 'REMOVE_ITEM':
+    case REMOVE_ITEM:
       return {
         items: state.items.filter(item => item.name !== action.itemName),
         total: state.total - action.item.price * action.item.quantity,
       }
 
-    case 'INCREMENT':
+    case INCREMENT:
       return {
         items: state.items.map(item =>
           item.name === action.item.name ? { ...item, quantity: item.quantity + 1 } : item,
@@ -33,7 +39,7 @@ export function itemReducer(state, action) {
         total: state.total + action.item.price,
       }
 
-    case 'DECREMENT': {
+    case DECREMENT: {
       const target = state.items.find(item => item.name === action.item.name)
       if (!target) return state
       if (target.quantity === 1) {
@@ -50,7 +56,7 @@ export function itemReducer(state, action) {
       }
     }
 
-    case 'CLEAR_CART':
+    case CLEAR_CART:
       return initialCart
 
     default:
