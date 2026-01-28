@@ -18,6 +18,7 @@ export default defineConfig({
       '@hooks': path.resolve(__dirname, 'src/hooks'),
       '@data': path.resolve(__dirname, 'src/data'),
       '@reducers': path.resolve(__dirname, 'src/reducers'),
+      '@context': path.resolve(__dirname, 'src/context'),
     },
   },
   build: {
