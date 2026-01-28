@@ -1,8 +1,7 @@
-import { createContext, useReducer, useEffect, useCallback, useMemo } from 'react'
+import { useReducer, useEffect, useCallback, useMemo } from 'react'
 import { cartReducer, ADD_ITEM, REMOVE_ITEM, INCREMENT, DECREMENT, CLEAR_CART } from '@reducers/cartReducer'
 import { getCartFromStorage, saveCartToStorage } from '@utils/cartStorage'
-
-const CartContext = createContext(null)
+import { CartContext } from './cartContext'
 
 export function CartProvider({ children }) {
   const [cart, dispatch] = useReducer(cartReducer, undefined, () => getCartFromStorage())
