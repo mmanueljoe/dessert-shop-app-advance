@@ -1,9 +1,10 @@
-import data from '@data/data.json'
+import { data } from '@data/data'
 import { useState } from 'react'
 import { useCart } from '@hooks/useCart'
 import { Card } from '@components/Card'
 import { Cart } from '@components/Cart'
 import { OrderConfirmed } from '@components/OrderConfirmed'
+
 function App() {
   const [isOrderConfirmed, setIsOrderConfirmed] = useState(false)
   const { clearCart } = useCart()

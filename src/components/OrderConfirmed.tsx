@@ -3,7 +3,13 @@ import { CircleCheck } from 'lucide-react'
 import { useCart } from '@hooks/useCart'
 import { useCartTotal } from '@hooks/useCartTotal'
 
-export function OrderConfirmed({ isOrderConfirmed, onClose }) {
+interface OrderConfirmedProps {
+  isOrderConfirmed: boolean
+  onClose: () => void
+  closeOrderModal: () => void
+}
+
+export function OrderConfirmed({ isOrderConfirmed, onClose }: OrderConfirmedProps) {
   const { cart } = useCart()
   const { total } = useCartTotal()
   useEffect(() => {

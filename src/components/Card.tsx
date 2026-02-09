@@ -1,9 +1,12 @@
 import { CircleMinus, ShoppingCart } from 'lucide-react'
 import { CirclePlus } from 'lucide-react'
 import { useCart } from '@hooks/useCart'
+import type { Dessert } from '@/types/dessert'
 
-export function Card({ name, price, image, category }) {
-  const item = { name, price, image, category }
+interface CardProps extends Dessert {}
+
+export function Card({ name, price, image, category }: CardProps) {
+  const item: Dessert = { name, price, image, category }
   const { addItem, increment, decrement, isInCart, getItemQuantity } = useCart()
   const imageUrl = image?.mobile || image?.thumbnail
   const inCart = isInCart(name)

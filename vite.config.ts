@@ -19,6 +19,7 @@ export default defineConfig({
       '@data': path.resolve(__dirname, 'src/data'),
       '@reducers': path.resolve(__dirname, 'src/reducers'),
       '@context': path.resolve(__dirname, 'src/context'),
+      '@types': path.resolve(__dirname, 'src/types'),
     },
   },
   build: {

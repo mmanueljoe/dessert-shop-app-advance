@@ -4,8 +4,12 @@ import Illustration from '@assets/illustration.png'
 import { useCart } from '@hooks/useCart'
 import { useCartTotal } from '@hooks/useCartTotal'
 
-export function Cart({ orderConfirmation }) {
-  const { cart, removeItem } = useCart()
+interface CartProps {
+  orderConfirmation: () => void
+}
+
+export function Cart({ orderConfirmation }: CartProps) {
+  const { cart } = useCart()
   const { itemCount, total } = useCartTotal()
   return (
     <>
@@ -14,7 +18,7 @@ export function Cart({ orderConfirmation }) {
           <h2 className="text-preset2 font-bold text-red">Your Cart ({itemCount})</h2>
           <ul>
             {cart.items.map(item => (
-              <CartItem key={item.name} item={item} removeItem={removeItem} />
+              <CartItem key={item.name} item={item} />
             ))}
           </ul>
           <div className="flex flex-row items-center justify-between">

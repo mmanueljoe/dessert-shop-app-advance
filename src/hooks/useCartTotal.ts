@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import { useCart } from '@hooks/useCart'
 
-export function useCartTotal() {
+export function useCartTotal(): { itemCount: number; total: number } {
   const { cart } = useCart()
 
   return useMemo(

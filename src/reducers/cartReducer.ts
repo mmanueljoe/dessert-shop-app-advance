@@ -1,12 +1,16 @@
+import type { CartState, CartItem } from '@/types/cart'
+import type { Dessert } from '@/types/dessert'
+import { type CartAction } from '@/types/reducer'
+
 export const ADD_ITEM = 'ADD_ITEM'
 export const REMOVE_ITEM = 'REMOVE_ITEM'
 export const INCREMENT = 'INCREMENT'
 export const DECREMENT = 'DECREMENT'
 export const CLEAR_CART = 'CLEAR_CART'
 
-export const initialCart = { items: [], total: 0 }
+export const initialCart: CartState = { items: [], total: 0 }
 
-export function cartReducer(state, action) {
+export function cartReducer(state: CartState, action: CartAction): CartState {
   switch (action.type) {
     case ADD_ITEM: {
       const existingItem = state.items.find(item => item.name === action.item.name)
