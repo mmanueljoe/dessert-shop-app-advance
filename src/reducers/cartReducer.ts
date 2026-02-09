@@ -1,5 +1,4 @@
-import type { CartState, CartItem } from '@/types/cart'
-import type { Dessert } from '@/types/dessert'
+import type { CartState } from '@/types/cart'
 import { type CartAction } from '@/types/reducer'
 
 export const ADD_ITEM = 'ADD_ITEM'
